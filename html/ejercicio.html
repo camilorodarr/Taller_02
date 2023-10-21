@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JS #1</title>
+</head>
+
+<body>
+    <h2>Mis Peliculas Favoritas Antiguas</h2>
+    <table id="TablaJS">
+    </table>
+
+    <script>
+        var peliculas = [
+            {
+                titulo: "Oppenheimer",
+                imagenSrc: "../recursos/img1.jpg",
+            },
+            {
+                titulo: "Gigantes De Acero",
+                imagenSrc: "../recursos/img2.jpg",
+            },
+            {
+                titulo: "Avengers EndGame",
+                imagenSrc: "../recursos/img3.jpg",
+            },
+            {
+                titulo: "Gran Gatsby",
+                imagenSrc: "../recursos/img4.jpg",
+            },
+            {
+                titulo: "Pacific Rim",
+                imagenSrc: "../recursos/img5.jpg",
+            },
+            {
+                titulo: "El Padrino",
+                imagenSrc: "../recursos/img6.jpg",
+            },
+        ];
+
+        var tabla = document.getElementById("TablaJS");
+
+        var fila1 = tabla.insertRow();
+
+        for (let i = 0; i < 3; i++) {
+            const celda = fila1.insertCell();
+            const pelicula = peliculas[i];
+            celda.innerHTML = `<img src="${pelicula.imagenSrc}" alt="${pelicula.titulo}" width="330px" height="300px"><br>${pelicula.titulo} <button>Guardar en Lista</button> <button>Ver Ahora</button>`;
+        }
+
+        var fila2 = tabla.insertRow();
+        for (let i = 3; i < 6; i++) {
+            const celda = fila2.insertCell();
+            const pelicula = peliculas[i];
+            celda.innerHTML = `<img src="${pelicula.imagenSrc}" alt="${pelicula.titulo}" width="330px" height="300px"><br>${pelicula.titulo} <button>Guardar en Lista</button> <button>Ver Ahora</button>`;
+        }
+
+    </script>
+
+</body>
+
+</html>
